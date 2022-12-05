@@ -9,6 +9,10 @@ body{
   background: #F5F7FA;
   max-width: 1140px;
   margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 ul {
   list-style: none;
@@ -32,14 +36,14 @@ a{
   width: 46px;
 }
 .header__menu {
-  position: absolute;
+  position: fixed;
   z-index: 1;
   top: 0;
   right: 0;
-  width: 256px;
+  width: 0;
   background: #F5F7FA;
   height: 100vh;
-  display: none;
+  transition: .2s;
 }
 .header__menu__botao{
   max-width: fit-content;
@@ -63,17 +67,18 @@ a{
   width: 100vw;
   height: 100vh;
   background: #00000050;
-  display: none;
+  visibility: hidden;
+  transition: .3s;
 }
 nav.menuAberto .header__menu {
-  display: block;
+  width: 256px;
 }
 nav.menuAberto .header__fundo {
-  display: block;
+  visibility: visible;
 }
 @media(min-width: 768px){
   .header{
-    margin-top: 88px;
+    margin-top: 0;
   }
   .header__logo img{
     width: initial;
